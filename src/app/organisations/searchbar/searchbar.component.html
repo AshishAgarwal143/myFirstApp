@@ -1,0 +1,7 @@
+<p>
+  <select [(ngModel)]="org" (change)="searchCompany($event)">
+    <option *ngFor="let x of dropDownList" value="{{x.key}}">
+      {{x.name}}
+    </option>
+  </select>
+</p>

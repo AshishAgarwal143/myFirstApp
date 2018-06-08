@@ -1,0 +1,8 @@
+<ul>
+<li *ngFor="let x of users">
+<a routerLink="view/{{x.key}}">{{x.name}}</a>
+</li>
+</ul>
+<p>
+<router-outlet></router-outlet>
+</p>

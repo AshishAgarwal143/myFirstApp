@@ -1,0 +1,20 @@
+
+<table class="table">
+  <th>Name</th>
+  <th>Age</th>
+  <th>desc</th>
+  <th>logo</th>
+  <th>Action</th>
+  
+<tr *ngFor="let x of user">
+  <td>{{x.name}}</td>
+  <td>{{x.age}}</td>
+  <td>{{x.desc}}</td>
+  <td><a href="{{x.logo}}"></a></td>
+  <td><a [routerLink]="['edit',x.key]">Edit</a>|
+     <a [routerLink]="['view',x.key]"></a>view</td>
+</tr>
+</table>
+<hr>
+
+<router-outlet></router-outlet>

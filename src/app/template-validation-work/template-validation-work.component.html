@@ -1,0 +1,24 @@
+<form #f='ngForm'>
+  <div class="form-group" [ngClass]="{'has-error':emp.errors}">
+    Employee:
+    <input type="text" class="form-control" name="em" ngModel required minlength="5" maxlength="10" 
+      #emp="ngModel" #spy>
+    <p *ngIf="emp.errors && (emp.touched || emp.dirty)">
+      <span *ngIf="emp.errors['required']">
+        Employee name is required
+      </span>
+      <span *ngIf="emp.errors['minlength']">
+        Minimum length should be 5
+      </span>
+      <!-- <span *ngIf="emp.errors['pattern']">
+        Please provide the correct value of email
+      </span> -->
+    </p>
+  </div>
+  <br>TODO: remove this: {{spy.className}}
+
+  <div class="form-group">
+    <button [disabled]="!f.valid" (click)="checkLogin(f)">Login</button>
+    <button (click)="clear()">Reset</button>
+  </div>
+</form>

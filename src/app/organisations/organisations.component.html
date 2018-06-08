@@ -1,0 +1,12 @@
+<div>
+  <app-searchbar></app-searchbar>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="myClass" *ngFor="let x of orgs">
+      <h2>{{x.name}}</h2>
+      <p>{{x.type}}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="container row">
+  <label for="">Search</label>
+<input class="form-control" [(ngModel)]="key">
+<input class="form-control" [(ngModel)]="n">
+</div>
+
+<div class="container">
+  <table class="table">
+    <th>name</th><th>cost</th><th>Brand</th>
+    <tr *ngFor="let x of products |search:key|limit:n">
+      <td>{{x.name}}</td>
+      <td>{{x.cost}}</td>
+      <td>{{x.brand}}</td>
+    </tr>
+  </table>
+</div>

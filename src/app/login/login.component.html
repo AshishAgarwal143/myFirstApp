@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>LOGIN</h1>
+  <div class="form-group">
+    <label>UserName : </label>
+    <input class="form-control" [(ngModel)]="username">
+  </div>
+  <div class="form-group">
+    <label>Password : </label>
+    <input class="form-control" type="password" [(ngModel)]="password">
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" (click)="login()">Login</button>
+  </div>
+</div>
+<p [appMyhide]='stt'>Testing</p>
+<div appMyred="green">COLOR</div>
+<div *appMyif='false'>Testing MY IF</div>
+<div *appMyfor=5>ANgular</div>

@@ -1,0 +1,39 @@
+<p>
+  <input [(ngModel)]="emp.key" type="hidden"> Name :
+  <input [(ngModel)]="emp.name">
+</p>
+<p>
+  Age :
+  <input [(ngModel)]="emp.age">
+</p>
+<p>
+  Department :
+  <input [(ngModel)]="emp.dept">
+</p>
+<p>
+  Salary :
+  <input [(ngModel)]="emp.sal">
+</p>
+<p>
+  <button *ngIf="btnStatus" (click)="save()">Save</button>
+  <button *ngIf="!btnStatus" (click)="update()">Update</button>
+</p>
+
+<br>
+<table class="table table-bordered table-striped table-hover">
+  <th>Name</th>
+  <th>Department</th>
+  <th>Salary</th>
+  <th>Action</th>
+  <tr *ngFor="let x of emps">
+    <td>{{x.data.nm}}</td>
+    <td>{{x.data.dept}}</td>
+    <td>{{x.data.sal}}</td>
+    <td>
+      <button (click)="delete(x.key)">Delete</button>
+      <button (click)="put(x)">Edit</button>
+
+    </td>
+  </tr>
+
+</table>

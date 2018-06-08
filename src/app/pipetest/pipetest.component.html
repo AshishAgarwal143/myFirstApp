@@ -1,0 +1,14 @@
+<p>
+ The value is {{a | double}}
+</p>
+<p>
+  The value is {{ b | power:x}}
+</p>
+<table>
+  <th>Name</th>
+  <th>Cost</th>
+  <tr *ngFor="let x of table |limit:2">
+    <td>{{x.productname}}</td>
+    <td>{{x.cost}}</td>
+  </tr>
+</table>

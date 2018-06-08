@@ -1,0 +1,66 @@
+<div class="container">
+  <div>
+    <button (click)="addPatientItem()" class="btn btn-primary">Add Patient</button>
+  </div>
+  <form [formGroup]="doctor">
+    <div class="form-group">
+      <label>Doctor Name</label>
+      <input class="form-control" formControlName="name" required>
+    </div>
+    <div class="form-group">
+      <label>specialization</label>
+      <input class="form-control" formControlName="specialization" required>
+    </div>
+
+<!-- start -->
+<div class="panel-group" formArrayName="patients" *ngFor="let patient of doctor.get('patients').controls;let i=index">
+  <div class="panel panel-default" [formGroupName]='i'>
+    <div class="panel-heading"><h2>Patient #{{i+1}}</h2>
+    
+    <div class="pull-right">
+      <button class="btn btn-small btn-danger" (click)="removePatient(i)">remove</button>
+    </div>
+    </div>
+    <div class="panel-body">
+
+      <div class="form-group">
+        <label>PatientName</label>
+        <input class="form-control" formControlName="patientName" required>
+      </div>
+      <div class="form-group">
+        <label>P-Age</label>
+        <input class="form-control" formControlName="page" required>
+      </div>
+      <div class="form-group">
+        <label>P-Disease</label>
+        <input class="form-control" formControlName="pdisease" required>
+      </div>
+
+
+    </div>
+  </div>
+  </div>
+
+<!-- end -->
+    <!-- <div formArrayName="patients" *ngFor="let patient of doctor.get('patients').controls;let i=index">
+      <div [formGroupName]='i'>
+        <div class="form-group">
+          <label>PatientName</label>
+          <input class="form-group" formControlName="patientName" required>
+        </div>
+        <div class="form-group">
+          <label>P-Age</label>
+          <input class="form-group" formControlName="page" required>
+        </div>
+        <div class="form-group">
+          <label>P-Disease</label>
+          <input class="form-group" formControlName="pdisease" required>
+        </div>
+      </div>
+    </div>-->
+      <div class="form-group">
+        <button (click)="save(doctor)">Save</button>
+      </div> 
+  </form>
+  
+</div>

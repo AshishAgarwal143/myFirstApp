@@ -1,0 +1,43 @@
+<div class="container">
+  <p>
+    <input [(ngModel)]="emp.key" type="hidden"> Name :
+    <input [(ngModel)]="emp.nm">
+  </p>
+  <p>
+    Department :
+    <input [(ngModel)]="emp.dept">
+  </p>
+  <p>
+    Salary :
+    <input [(ngModel)]="emp.sal">
+  </p>
+  <p>
+    <button *ngIf="btnStatus" (click)="save()">Save</button>
+    <button *ngIf="!btnStatus" (click)="update()">Update</button>
+  </p>
+
+  <br>
+  <div>
+    <label for="search">Search</label>
+    <input type="text" name="search" id="search" [(ngModel)]="key">[{{key}}]
+
+  </div>
+  <table class="table table-bordered table-striped">
+    <th>Name</th>
+    <th>Department</th>
+    <th>Salary</th>
+    <th>Action</th>
+    <tr *ngFor="let x of emps | empSearch : key">
+      <td>{{x.data.nm}}</td>
+      <td>{{x.data.dept}}</td>
+      <td>{{x.data.sal}}</td>
+      <td>
+        <button (click)="delete(x.key)">Delete</button>
+      </td>
+      <td>
+        <button (click)="put(x)">Edit</button>
+      </td>
+    </tr>
+
+  </table>
+</div>
